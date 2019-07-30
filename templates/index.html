@@ -1,0 +1,245 @@
+<html>
+<style>
+	body
+	{
+background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	}
+	h1{
+	color:white;
+	text-align:center;
+	font-family : "Times New Roman", Times, serif;
+	}
+	* {
+	box-sizing: border-box;
+	}
+
+	input[type=text], select, textarea {
+	  width: 100%;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  resize: vertical;
+	}
+
+	label {
+	  padding: 12px 12px 12px 0;
+	  display: inline-block;
+	}
+
+	input[type=submit] {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 12px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  float: right;
+	}
+
+	input[type=submit]:hover {
+	  background-color: #45a049;
+	}
+
+	.container {
+	  border-radius: 5px;
+	  background-color: #f2f2f2;
+	  width:500px;
+	  padding: 20px;
+	  
+	  
+	}
+	div{
+	margin: 0 auto;
+    overflow: hidden;
+  
+	}
+	.col-25 {
+	  float: left;
+	  width: 25%;
+	  margin-top: 6px;
+	}
+
+	.col-75 {
+	  float: left;
+	  width: 75%;
+	  margin-top: 6px;
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+</style
+<body>
+    <h1>Loan Predictor</h1>
+	<div class="container" >
+	  <form id="income_info" action="/result" method="POST">
+
+		<div class="row">
+			<div class="col-25">
+				<label for="gender">Gender</label>
+			</div>
+			<div class="col-75">
+				<select id="gender" name="gender">
+				  <option value="1">Male</option>
+				  <option value="0">Female</option>
+				</select>
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class="row">
+			<div class="col-25">
+				<label for="martial_stat">Married</label>
+			</div>
+			<div class="col-75">
+				<select id="martial_stat" name="martial_stat">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class="row">
+			<div class="col-25">
+				<label for="dependents">Dependents</label>
+			</div>
+			<div class="col-75">
+				<select id="dependents" name="dependents">
+				  <option value="0">No Dependents</option>
+				  <option value="1">One Dependent</option>
+				  <option value="2">Two Dependents</option>
+				  <option value="3">Three/More Dependents</option>
+				</select>
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class="row">
+			<div class="col-25">
+				<label for="edu">Education</label>
+			</div>
+			<div class="col-75">
+				<select id="edu" name="edu">
+				  <option value="0">Graduate</option>
+				  <option value="1">Non Graduate</option>
+				</select>
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class="row">
+			<div class="col-25">
+				<label for="self_emp">Self Employed</label>
+			</div>
+			<div class="col-75">
+				<select id="self_emp" name="self_emp">
+				  <option value="1">Yes</option>
+				  <option value="0">No</option>
+				</select>
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class="row">
+			<div class="col-25">
+				<label for="loan_amt">Loan Amount </label>
+			</div>
+			<div class="col-75">
+				<input type="text" id="loan_amt" name="loan_amt">
+			</div>
+		</div>
+		
+		<br>
+		
+		 
+		<div class="row">
+			<div class="col-25">
+				<label for="loan_term">Loan Term </label>
+			</div>
+			<div class="col-75">
+				<input type="text" id="loan_term" name="loan_term" placeholder="Give value in number of Months">
+			</div>
+		</div>
+		
+		<br>
+		
+		<div class="row">
+			<div class="col-25">
+				<label for="credit_his">Credit History</label>
+			</div>
+			<div class="col-75">
+				<select id="credit_his" name="credit_his">
+				  <option value="1">Yes</option>
+				  <option value="0">No</option>
+				</select>
+			</div>
+		</div>
+		
+		<br>
+	  
+		<div class="row">
+			<div class="col-25">
+				<label for="property_area">Property Area</label>
+			</div>
+			<div class="col-75">
+				<select id="property_area" name="property_area">
+				  <option value="0">Rural</option>
+				  <option value="1">Semi Urban</option>
+				  <option value="2">Urban</option>
+				</select>
+			</div>
+		</div>
+		
+		<br>
+		
+		<br>
+		
+		 
+		<div class="row">
+			<div class="col-25">
+				<label for="income">Income </label>
+			</div>
+			<div class="col-75">
+				<input type="text" id="income" name="income">
+			</div>
+		</div>
+		
+		<br>
+		
+		<input type="submit" onclick="my_func()" value="Submit">
+		
+		<br>
+		<br>
+	  </form>
+	</div>
+	<script>
+	function my_func(){
+	debugger;
+	var gender_value = parseInt(document.getElementById("gender").value);
+	console.log("Gender Value"+gender_value);
+	
+	var martial_stat_val= parseInt(document.getElementById("martial_stat").value)
+	console.log("Married ?"+martial_stat_val);
+	
+	var credit_his_val= parseInt(document.getElementById("credit_his").value)
+	console.log("credit_his_val ?"+credit_his_val);
+	
+	var property_area_value= parseInt(document.getElementById("property_area").value)
+	console.log("property_area ?"+property_area_value);
+	}
+	</script>
+</body>
+</html>
